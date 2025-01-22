@@ -1,6 +1,6 @@
-import javax.swing.*;
+package Framework;
 
-import static java.awt.Color.red;
+import javax.swing.*;
 
 public class MakingChange {
     public static void main(String[] args) {
@@ -9,7 +9,11 @@ public class MakingChange {
         frame.setSize(500, 500);//adjust size by pixel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Close program when user toggles x
         frame.setVisible(true); //makes panel visible
-        frame.getContentPane().setBackground(red); //sets color
+
+
+
+
+
 
 
     }

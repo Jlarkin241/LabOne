@@ -1,8 +1,11 @@
+package Framework;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class Purse {
    //Instance variables
-   // map<Denomination,Integer> cash = new HashMap<>();
+    Map<String,Integer> wallet = new HashMap<>();
 
     //Instance methods
     public void add(Denomination type, int number){
