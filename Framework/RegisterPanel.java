@@ -1,35 +1,40 @@
 package Framework;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RegisterPanel extends JPanel {
-   
+   private JTextField textField;
+   private JLabel label;
+   private JButton button;
+   //private ImageIcon image;
    public RegisterPanel() {
-      //creates buttons
-      JButton toggle = new JButton("Toggle");
-      toggle.addActionListener(new Listener());
+
+      label = new JLabel();
+     // image = new ImageIcon("images/penny.jpg");
+      textField= new JTextField(10);
+      add(textField);
+      button = new JButton("Break Change");
+      button.addActionListener(new Listener());
       //sets background of button to green
-      toggle.setBackground(Color.green);
+      button.setBackground(Color.green);
       //sets text to color??
-      toggle.setForeground(Color.yellow);
-      add(toggle);
+      button.setForeground(Color.yellow);
+      add(button);
       //setting background color
       setBackground(Color.WHITE);
       //setting size of panel
-      setSize(500,500);
-      JLabel registerLabel = new JLabel("Register");
-      ImageIcon pic = new ImageIcon("images/penny.jpg");
-
-      registerLabel.setIcon(pic);
-      add(registerLabel);
+      //setSize(500,500);
 
    }
    private class Listener implements ActionListener {
       public void actionPerformed(ActionEvent e) {
-         JOptionPane.showMessageDialog(RegisterPanel.this, "You are now registered");
+      String text = textField.getText();
+      double input = Double.parseDouble(text);
+
+         //new Register().makeChange(input);
+
 
       }
    }

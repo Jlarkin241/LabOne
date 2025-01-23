@@ -25,16 +25,19 @@ public class Purse {
 
     //Instance methods
     //adds a given number of a currency into cash variable
+    // key(denomination/currency):value(amount of denomination/currency)
     public void add(Denomination type, int number){
         cash.put(type,number);
     }
     //Didn't get this one.
-    //if the given Denomination isn't present or if value minus number is less than zero, returned zero
-    //else returned value - number
+    //if the given Denomination isn't present or if (value minus number) is less than zero, returned zero
+    //else returned (value - number) and replaces value of given key
     public double remove(Denomination type, int number){
         if(cash.containsKey(type)){ //checks if key is present
-            if((cash.get(type) - number) < 0)
+            if((cash.get(type) - number) < 0) {
+                cash.put(type,0);
                 return 0;
+            }
             else {
                 cash.put(type,cash.get(type) - number);
                 return cash.get(type);}
@@ -44,7 +47,7 @@ public class Purse {
     }
     //for loop that increments through the array and checks
     // map to see if one of its keys matches value matches with Denomination of the array
-    //if found adds matched value to sum that will be returned
+    //if found, adds matched value to sum that will be returned
     public double getValue() {
         double sum = 0;
         for(int i = 0; i < arr.length; i++){
@@ -66,7 +69,7 @@ public class Purse {
             }
         }
         if(!check)
-            str = "Empty purse";
+            str = "Empty purse\n";
         return str;
     }
 }
