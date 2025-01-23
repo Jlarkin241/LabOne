@@ -3,25 +3,48 @@ import Framework.*;
 
 public class Register {
     public Purse makeChange(double amt){
+        //Instantiates array with values associated with a currency
+        Denomination [] moneyClip = { new Denomination("Fifty note"
+                    , 50, "bill", "images/fifty.jpg"),
+                    new Denomination("Ten note"
+                    , 10, "bill", "images/ten.jpg"),
+                    new Denomination("five note"
+                    , 5, "bill", "images/five.jpg"),
+                    new Denomination("One note"
+                    , 1, "bill", "images/one.png"),
+                    new Denomination("quarter"
+                    , .25, "coin", "images/quarter.jpg"),
+                    new Denomination("Dime"
+                    , .10, "coin", "images/dime.jpg"),
+                     new Denomination("Penny"
+                    , .01, "coin", "images/penny.jpg")};
+        Purse purse = new Purse();
+        //tallies the currency that breaks down amount
+        int [] counter = {0,0,0,0,0,0,0};
+        for(int i = 0; i < moneyClip.length; i++)
+        {
+            int count = 0;
+            while(moneyClip[i].amt()<= amt)
+            {
+              //  System.out.println(amt);
+                counter[i] = ++count;
+                amt -= moneyClip[i].amt();
 
-        return new Purse();
+            }
+            purse.add(moneyClip[i],counter[i]);
+        }
+
+                System.out.println(purse.toString());
+                System.out.println(purse.getValue());
+
+
+
+
+         return purse;
+        }
+        public static void main(String[] args) {
+            new Register().makeChange(.46);
+        }
     }
 
-    public static void main(String[] args) {
-        //Instantiates variables with currency
-        Denomination fifty = new Denomination("Fifty note"
-                ,1.00,"bill","text.txt");
-        Denomination ten = new Denomination("Ten note"
-                ,1.00,"bill","text.txt");
-        Denomination five = new Denomination("five note"
-                ,1.00,"bill","text.txt");
-        Denomination one = new Denomination("One note"
-                ,1.00,"bill","text.txt");
-        Denomination quarter = new Denomination("Dollar"
-                ,1.00,"coin","text.txt");
-        Denomination dime = new Denomination("Dollar"
-                ,1.00,"coin","text.txt");
-        Denomination penny = new Denomination("Dollar"
-                ,1.00,"coin","text.txt");
-    }
-}
+
