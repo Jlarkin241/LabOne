@@ -11,17 +11,12 @@ public class RegisterPanel extends JPanel {
    //private ImageIcon image;
    public RegisterPanel() {
 
-      label = new JLabel();
-     // image = new ImageIcon("images/penny.jpg");
       textField= new JTextField(10);
       add(textField);
       button = new JButton("Break Change");
       button.addActionListener(new Listener());
-      //sets background of button to green
-      button.setBackground(Color.green);
-      //sets text to color??
-      button.setForeground(Color.yellow);
       add(button);
+
       //setting background color
       setBackground(Color.WHITE);
       //setting size of panel
@@ -32,8 +27,9 @@ public class RegisterPanel extends JPanel {
       public void actionPerformed(ActionEvent e) {
       String text = textField.getText();
       double input = Double.parseDouble(text);
+      Purse purse = new Register().makeChange(input);
+      System.out.println(purse.toString() + "Wallet: $" + purse.getValue());
 
-         //new Register().makeChange(input);
 
 
       }

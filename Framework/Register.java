@@ -47,6 +47,7 @@ public class Register {
         double input = sc.nextDouble();// gets value used as argument of makingChange
 
         do {
+            //calls function,pass input,returns a purse
             purse = new Register().makeChange(input);//assigned value within loop to erase contents at header return
             System.out.print(purse.toString());//returns proper currency
             System.out.println("Wallet holds: $" + purse.getValue());//returns sum of wallet; should match argument
