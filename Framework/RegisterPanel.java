@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RegisterPanel extends JPanel {
-
+   
    public RegisterPanel() {
       //creates buttons
       JButton toggle = new JButton("Toggle");

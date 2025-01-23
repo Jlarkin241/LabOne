@@ -6,7 +6,7 @@ public class MakingChange extends JFrame {
     public MakingChange() {
         // Create a new JFrame
         JFrame frame = new JFrame("Making Change");//creates frame objects and titles upper window
-        frame.setSize(800, 800);//adjust size by pixel
+        frame.setSize(500, 500);//adjust size by pixel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Close program when user toggles x
         frame.add(new RegisterPanel());
         frame.setVisible(true); //makes panel visible
@@ -19,7 +19,7 @@ public class MakingChange extends JFrame {
 
     }
     public static void main(String[] args) {
-        /* new MakingChange(); */
+         new MakingChange();
 
 
     }
