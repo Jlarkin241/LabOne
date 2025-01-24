@@ -5,23 +5,27 @@ import java.util.Map;
 
 public class Purse {
     // an array consisting of currency details held in type Denomination
-    //Will be used to reference key and to pull it values
-   private Denomination [] arr = { new Denomination("Fifty note"
-            , 50, "bill", "images/fifty.jpg"),
-            new Denomination("Ten note"
-                    , 10, "bill", "images/ten.jpg"),
-            new Denomination("five note"
-                    , 5, "bill", "images/five.jpg"),
-            new Denomination("One note"
-                    , 1, "bill", "images/one.png"),
-            new Denomination("quarter"
-                    , .25, "coin", "images/quarter.jpg"),
+    //Will be used to check for available keys within map and then to pull it value
+    private Denomination[] arr = { new Denomination("Fifty"
+            , 50, "bill", "images/Fifty.jpg"),
+            new Denomination("Ten"
+                    , 10, "bill", "images/Ten.jpg"),
+            new Denomination("Five"
+                    , 5, "bill", "images/Five.jpg"),
+            new Denomination("One"
+                    , 1, "bill", "images/One.png"),
+            new Denomination("Quarter"
+                    , .25, "coin", "images/Quarter.jpg"),
             new Denomination("Dime"
-                    , .10, "coin", "images/dime.jpg"),
+                    , .10, "coin", "images/Dime.jpg"),
             new Denomination("Penny"
-                    , .01, "coin", "images/penny.jpg")};
+                    , .01, "coin", "images/Penny.jpg")};
    //Data type consisting of pairs that call each other
    private Map<Denomination,Integer> cash  = new HashMap<>();
+
+   public Map<Denomination,Integer> getCash() {
+       return cash;
+   }
 
     //Instance methods
     //adds a given number of a currency into cash variable
@@ -55,7 +59,7 @@ public class Purse {
                 sum += arr[i].amt() * cash.get(arr[i]);
             }
         }
-        return sum;
+        return Math.round(sum*100.0)/100.0; //rounds two decimal places;got logic from google
     }
     //For loops compares map to array,
     // if keys exist purse is occupied and records inventory in a string

@@ -5,20 +5,20 @@ import java.util.Scanner;
 public class Register {
     public Purse makeChange(double amt) {
         //Instantiates array with values associated with a currency
-        Denomination[] moneyClip = {new Denomination("Fifty note"
-                , 50, "bill", "images/fifty.jpg"),
-                new Denomination("Ten note"
-                        , 10, "bill", "images/ten.jpg"),
-                new Denomination("five note"
-                        , 5, "bill", "images/five.jpg"),
-                new Denomination("One note"
-                        , 1, "bill", "images/one.png"),
-                new Denomination("quarter"
-                        , .25, "coin", "images/quarter.jpg"),
+         Denomination[] moneyClip = { new Denomination("Fifty"
+                , 50, "bill", "images/Fifty.jpg"),
+                new Denomination("Ten"
+                        , 10, "bill", "images/Ten.jpg"),
+                new Denomination("Five"
+                        , 5, "bill", "images/Five.jpg"),
+                new Denomination("One"
+                        , 1, "bill", "images/One.png"),
+                new Denomination("Quarter"
+                        , .25, "coin", "images/Quarter.jpg"),
                 new Denomination("Dime"
-                        , .10, "coin", "images/dime.jpg"),
+                        , .10, "coin", "images/Dime.jpg"),
                 new Denomination("Penny"
-                        , .01, "coin", "images/penny.jpg")};
+                        , .01, "coin", "images/Penny.jpg")};
         Purse purse = new Purse();
         //tallies the currency that breaks down amount
         int[] counter = {0, 0, 0, 0, 0, 0, 0};
