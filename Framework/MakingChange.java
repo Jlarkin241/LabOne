@@ -1,9 +1,6 @@
 package Framework;
-
 import GUI.RegisterPanel;
-
 import javax.swing.*;
-import java.awt.*;
 
 public class MakingChange extends JFrame {
     public MakingChange() {

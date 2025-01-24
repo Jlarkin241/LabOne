@@ -11,7 +11,7 @@ public class RegisterPanel extends JPanel {
    private JTextField textField;
    private JLabel label;
    private JButton button;
-  // private PursePanel ChangePanel;
+   private PursePanel changePanel;
    private Register register = new Register();
 
 
@@ -24,8 +24,9 @@ public class RegisterPanel extends JPanel {
       upperPanel.setBackground(Color.PINK);
       upperPanel.setPreferredSize(new Dimension(970, 300));
 
+      changePanel = new PursePanel();
 
-      //setLayout(new BorderLayout());
+
       label = new JLabel("Enter Deposit: ");
       upperPanel.add(label);
       textField= new JTextField(5);
@@ -35,7 +36,8 @@ public class RegisterPanel extends JPanel {
       upperPanel.add(button);
 
 
-      this.add(upperPanel);
+      add(upperPanel);
+      add(changePanel);
 
 
       //setting background color
@@ -51,8 +53,18 @@ public class RegisterPanel extends JPanel {
       String text = textField.getText();
       double input = Double.parseDouble(text);
       Purse purse = register.makeChange(input);
-
+      //Prints console output;
       System.out.println("Wallet contents:\n" + purse.toString()  + "Total value: $" + purse.getValue() + '\n');
+
+          changePanel.setPreferredSize(new Dimension(900, 800));
+          changePanel.setBackground(Color.BLUE);
+
+          //Sets the change panel and add to inputPanel
+          changePanel.setPurse(purse);
+
+
+          changePanel.revalidate();
+          changePanel.repaint();
 
 
 
